@@ -31,8 +31,7 @@ public class Conta {
 	}
 	
 	public boolean transfere(double valor, Conta destino) {
-		if(this.saldo >= valor) {
-			this.saldo -= valor;
+		if(this.saca(valor)) {
 			destino.deposita(valor); // ou destino.saldo += valor;
 			return true;
 		}else {
@@ -51,7 +50,7 @@ public class Conta {
 		
 	public void setNumero(int numero) {
 		if(numero < 0) {
-			System.out.println("Numero inválido");
+			System.out.println("Numero invÃ¡lido");
 			return;
 		}
 			this.numero = numero;
